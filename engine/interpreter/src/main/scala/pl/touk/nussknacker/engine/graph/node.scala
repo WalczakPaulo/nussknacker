@@ -131,8 +131,11 @@ object node {
     override val componentId = ref.typ
   }
 
-  case class SubprocessInput(id: String, ref: SubprocessRef,
-                             additionalFields: Option[UserDefinedAdditionalNodeFields] = None, isDisabled: Option[Boolean] = None) extends OneOutputSubsequentNodeData with EndingNodeData with WithComponent  with Disableable{
+  case class SubprocessInput(id: String,
+                             ref: SubprocessRef,
+                             additionalFields: Option[UserDefinedAdditionalNodeFields] = None,
+                             isDisabled: Option[Boolean] = None,
+                             subprocessParams: Option[List[SubprocessParameter]] = None) extends OneOutputSubsequentNodeData with EndingNodeData with WithComponent  with Disableable{
     override val componentId = ref.id
   }
 
